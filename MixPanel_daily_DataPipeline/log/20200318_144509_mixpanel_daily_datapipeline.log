@@ -1,0 +1,15 @@
+
+ | -------------------------------------- PROGRAM EXECUTION
+ | ------------------------------------------------  Data pipeline start
+ | Python program: mixpanel_daily_datapipeline.py
+ | local/cloud parameter: local
+ | Execution date: 2019-03-16
+ | Data dir: ../data/
+ | Log dir: ../log/
+ | Json download file dir: ../dir_json_stg/
+ | Log file name: ../log/20200318_144509_mixpanel_daily_datapipeline.log
+ |  
+2020-03-18 14:45:09 | --------------------  Starting execution -------------------------- 
+2020-03-18 14:45:09 | Download JSON file and create one dataframe for each EVENT
+2020-03-18 14:45:09 | curl https://data.mixpanel.com/api/2.0/export/     -u XXXYYY680770fe99b03e4631ba22fAPI:     -d from_date="2019-03-16"     -d to_date="2019-03-16"     -d event='["Company First Start","Conversation Started","Conversation Completed","A/B - Onboard - Voice","Subscription Confirmed"]' >> ../dir_json_stg/20200318_144509_mixpanel_ALL_events_STG.json
+2020-03-18 14:45:09 | EXCEPTION : JSON API DOWNLOAD - NO DATA to process - check internet                connection or the execution date parameter

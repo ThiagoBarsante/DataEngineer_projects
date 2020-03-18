@@ -1,0 +1,26 @@
+
+ | -------------------------------------- PROGRAM EXECUTION
+ | ------------------------------------------------  Data pipeline start
+ | Python program: mixpanel_daily_datapipeline.py
+ | local/cloud parameter: aws
+ | Execution date: 2019-11-04
+ | Data dir: ../data/
+ | Log dir: ../log/
+ | Json download file dir: ../dir_json_stg/
+ | Log file name: ../log/20200318_144329_mixpanel_daily_datapipeline.log
+ |  
+2020-03-18 14:43:29 | --------------------  Starting execution -------------------------- 
+2020-03-18 14:43:29 | Download JSON file and create one dataframe for each EVENT
+2020-03-18 14:43:29 | curl https://data.mixpanel.com/api/2.0/export/     -u XXXYYY680770fe99b03e4631ba22fAPI:     -d from_date="2019-11-04"     -d to_date="2019-11-04"     -d event='["Company First Start","Conversation Started","Conversation Completed","A/B - Onboard - Voice","Subscription Confirmed"]' >> ../dir_json_stg/20200318_144329_mixpanel_ALL_events_STG.json
+2020-03-18 14:43:29 | JSON API DOWNLOAD - OK
+2020-03-18 14:43:29 | Merge all Data frames and filter rows and columns ... 
+2020-03-18 14:43:29 | Label Encode valueabonbvoi ...
+2020-03-18 14:43:29 | One Hot Encode paths ... 
+2020-03-18 14:43:30 | Calculate number of hours...
+2020-03-18 14:43:30 | Processing target - number of conversations ...
+2020-03-18 14:43:30 | Processing additional feature - amount of yours...
+2020-03-18 14:43:30 | Export results to csv (Linux  storage): ../data/2019-11-04-mixpanel_daily_export.csv
+2020-03-18 14:43:30 | AWS EXECUTION : access key (credentials local file) 
+2020-03-18 14:43:30 | Exporting results to AWS S3 : awsbigdata_xpto/datapipeline_tmp/2019-11-04-mixpanel_daily_export.csv
+2020-03-18 14:43:30 | Cleanup process in  days...  5
+2020-03-18 14:43:30 | --------------------  Process end -------------------------- 

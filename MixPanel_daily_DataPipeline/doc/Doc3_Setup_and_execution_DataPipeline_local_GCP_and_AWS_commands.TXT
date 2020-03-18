@@ -1,0 +1,52 @@
+
+## GitHub - public link 
+
+### - clone github
+git clone https://github.com/ThiagoBarsante/DataEngineer_projects.git
+
+## REMOVE ALL FILES FOR EXEUCUTION - 
+## rm ../dir_json_stg/*.json
+## rm ../data/*.csv
+## rm ../log/*.log
+
+## GO TO PYTHON DIRECTORY AND RUN THE PROGRAM - mixpanel_daily_datapipeline.py
+
+## The curl command does not provide any more the json files
+## build the work around to simulate the execution from first deliverable - workaround function
+
+ll ./support_datafiles/
+ll ../dir_json_stg/
+ls -lrt ../log/
+ll ../data/
+
+
+
+## EXECUTION INFO
+'''
+- DAY : 04-11-2019 has 5 events
+- DAY : 01-11-2019 has 4 events - falta subscription
+- OTHER days do not have data to download
+- daily execution sample
+'''
+
+### daily execution - the python will run for yesterday
+python mixpanel_daily_datapipeline.py local
+python mixpanel_daily_datapipeline.py gcp
+
+
+## execution for specific day local
+python mixpanel_daily_datapipeline.py local 01-11-2019
+python mixpanel_daily_datapipeline.py gcp 04-11-2019
+python mixpanel_daily_datapipeline.py aws 04-11-2019
+
+'''
+- Obs. Daily execution will run process from yesterday
+- Yesterday also not have json data to download, so it will copy from json file (04-11-2019) and run with this data
+- All other
+- execution without parameter will simulate execution from yesterday and copy 
+'''
+
+## On-premise / local execution for specific day
+python mixpanel_daily_datapipeline.py local 04-11-2019
+
+
